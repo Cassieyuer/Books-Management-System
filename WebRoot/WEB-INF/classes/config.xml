@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties"></properties>
+	<settings>
+		<setting name="logImpl" value="LOG4J"></setting>
+	</settings>
+	<environments default="orcale">
+		<environment id="orcale">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}"></property>
+				<property name="url" value="${url}"></property>
+				<property name="username" value="${username}"></property>
+				<property name="password" value="${password}"></property>
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/etoak/book/books/po/scott/CategoryMapper.xml"></mapper>
+		<mapper resource="com/etoak/book/books/po/scott/BookMapper.xml"></mapper>
+		<mapper resource="com/etoak/book/books/po/scott/BookpicMapper.xml"></mapper>
+	</mappers>
+</configuration>
